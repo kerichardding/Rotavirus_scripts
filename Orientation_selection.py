@@ -2,7 +2,7 @@
 #The target is to find eactly how many misses are there in each virion
 #Future functions includes automatic fitting of the correct orientation
 #t_h is threshold for how many matches are in 5-group, should larger than 3 at least
-#By default, to determine a rotational match, we need at least 2 markers in one set
+#By default, to determine a rotational match, we need at least 4 matches in one set
 
 from sys import argv
 import re
@@ -147,7 +147,7 @@ def main():
                             rot_lst[k]=rot_lst[k+1]
                         rot_lst[c_e-1]=tmp
                     #Begin to analyze                         
-                    if best_dup_v<3:
+                    if best_dup_v<5:
                         #Failed the rotational match
                         virion_bad+=1
                     else:
